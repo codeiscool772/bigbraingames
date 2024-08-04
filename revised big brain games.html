@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big Brain Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 20px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            display: block;
+            margin: 10px 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #story {
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Big Brain Games
+    </header>
+    <div class="content">
+        <a href="https://www.friv.com/z/games/motox3m/game.html">
+            <img src="moto.png" alt="moto x3m" style="width:42px;height:42px;">
+        </a>
+        <a href="https://boredhumans.com/falling_sand.php">Click here for a physics game</a>
+        <a href="https://www.chess.com/play/computer">Click here for chess</a>
+        <h1>Mad Libs Game</h1>
+        <form id="madLibsForm">
+            <label for="noun1">Noun:</label>
+            <input type="text" id="noun1" name="noun1"><br>
+
+            <label for="verb">Verb:</label>
+            <input type="text" id="verb" name="verb"><br>
+
+            <label for="adjective">Adjective:</label>
+            <input type="text" id="adjective" name="adjective"><br>
+
+            <label for="noun2">Another Noun:</label>
+            <input type="text" id="noun2" name="noun2"><br>
+
+            <input type="button" value="Create Story" onclick="createStory()">
+        </form>
+
+        <h2>Your Mad Libs Story:</h2>
+        <p id="story"></p>
+    </div>
+
+    <script>
+        function createStory() {
+            var noun1 = document.getElementById("noun1").value;
+            var verb = document.getElementById("verb").value;
+            var adjective = document.getElementById("adjective").value;
+            var noun2 = document.getElementById("noun2").value;
+
+            var story = "Once upon a time, there was a " + adjective + " " + noun1 + " who loved to " + verb + ". Every day, the " + noun1 + " would visit the " + noun2 + " to have some fun.";
+            
+            document.getElementById("story").innerText = story;
+        }
+    </script>
+</body>
+</html>
